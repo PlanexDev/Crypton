@@ -1,2 +1,21 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+    import "../global.css"
+	import type { Vault } from 'src/api/Vault';
+
+	import VaultList from '../components/VaultList.svelte';
+
+	const vaults: Vault[] = [
+		{
+			name: 'My Secret Information',
+			path: '/home/user/vaults/secret_information',
+			favorited: true
+		},
+		{
+			name: 'Plans For World Domination',
+			path: '/home/user/vaults/world_plans',
+			favorited: false
+		}
+	];
+</script>
+
+<VaultList {vaults} />
