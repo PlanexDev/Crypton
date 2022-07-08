@@ -6,21 +6,25 @@ import VaultListing from './VaultListing.svelte';
 </script>
 
 <style>
-	h1 {
-		font-family: sans-serif;
+	div {
+		background-color: #101010;
+		max-width: 1080px;
+		margin: 2em auto;
+		padding: 0 1em 1em 1em;
 	}
 
-	h2 {
+	h1 {
+		font-size: 3.5em;
+		margin-bottom: 0;
 		font-family: sans-serif;
-		font-weight: normal;
-		color: #555;
 	}
 </style>
 
-<h1>Crypton</h1>
-<h2>Vaults</h2>
-<hr>
-
-{#each vaults as vault}
-    <VaultListing {vault}/>
-{/each}
+<div>
+	<h1>Vaults</h1>
+	<hr>
+	
+	{#each vaults as vault}
+		<VaultListing {vault}/>
+	{/each}
+</div>
